@@ -1,4 +1,20 @@
+I like a
+I like b
+I like c
+I like d
+I like e
+I like f
+<<<<<<< HEAD
+I like g
+I like h
+I like i very much
+I like 1
+=======
+I don't like g
+I like 1
+I like 2
+I like 3
+I like 4
+I like 5
 
-I like talk radio
-I like snow
-I like biscuits
+>>>>>>> Alex
