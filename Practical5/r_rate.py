@@ -7,7 +7,7 @@ r = float(input("Please enter the r number:"))
 #gain the number r
 n = 84
 #set number of students
-for i in range(1,5):
+for i in range(0,5):
 	n = n * (1 + r)
 #calculate the total number of individuals infected after 5 generations.
 #actually equal to n = n*(1+r)^5
