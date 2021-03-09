@@ -1,3 +1,8 @@
+#input r
+#initialize n
+#calculate the result
+#output the result
+
 r = float(input("Please enter the r number:"))
 #gain the number r
 n = 84
