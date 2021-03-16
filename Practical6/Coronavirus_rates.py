@@ -1,14 +1,21 @@
 # Import libraries
 import matplotlib.pyplot as plt 
 # Import the total number of cases for five countries
-dic = {
-    'USA':29862124,
-    'India':11285561,
-    'Brazil':11205972,
-    'Russia':4360823,
-    'UK':4234924
-}
 
+# set all the country and cases
+country = ['USA','India','Brazil','Russia','UK']
+cases = [29862124,11285561,11205972,4360823,4234924]
+total = [332367957,213621654,1389530904,145978580,68136918]
+fre = []
+# calculate the frequency
+for i in range(len(cases)):
+    fre.append(cases[i] / total[i])
+# generate frequency dictionary 
+dicfre = dict(zip(country,fre))
+# generate cases dictionary
+dic = dict(zip(country,cases))
+# output frequency
+print(dicfre)
 # Generate a pie chart
 plt.pie(dic.values(),labels=dic.keys(),autopct='%1.1f%%',shadow=True,startangle=90)
 plt.axis('equal')
