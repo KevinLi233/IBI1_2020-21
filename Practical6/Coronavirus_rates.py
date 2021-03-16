@@ -5,11 +5,11 @@ import matplotlib.pyplot as plt
 # set all the country and cases
 country = ['USA','India','Brazil','Russia','UK']
 cases = [29862124,11285561,11205972,4360823,4234924]
-total = [332367957,213621654,1389530904,145978580,68136918]
 fre = []
+total = sum(cases)
 # calculate the frequency
 for i in range(len(cases)):
-    fre.append(cases[i] / total[i])
+    fre.append(cases[i] / total)
 # generate frequency dictionary 
 dicfre = dict(zip(country,fre))
 # generate cases dictionary
