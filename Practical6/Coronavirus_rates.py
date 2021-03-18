@@ -20,3 +20,4 @@ print(dicfre)
 plt.pie(dic.values(),labels=dic.keys(),autopct='%1.1f%%',shadow=True,startangle=90)
 plt.axis('equal')
 plt.show()
+
