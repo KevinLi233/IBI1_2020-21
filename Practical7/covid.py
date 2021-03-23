@@ -15,6 +15,9 @@ while covid_data.loc[i,"location"] == "Afghanistan":
 print("Mean:",np.mean(covid_data.iloc[:,2]))    
 print("Median:",np.median(covid_data.iloc[:,2]))
 
+plt.figure(figsize=(6,6), dpi=100)
+plt.figure(1)
+ax1 = plt.subplot(211)
 plt.boxplot(
     covid_data.loc[:,"new_cases"],
     vert = True,
@@ -29,7 +32,15 @@ plt.boxplot(
     showfliers = True,
     notch = False
     )
+
+ax1 = plt.subplot(212)
+world_dates = covid_data.loc[:,"date"]
+world_new_cases = covid_data.loc[:,"new_cases"]
+plt.plot(world_dates, world_new_cases, 'b+')
+
 plt.show()
+
+
 
 i = 0
 while covid_data.loc[i,"location"] != "United Kingdom":
