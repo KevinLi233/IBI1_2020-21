@@ -8,12 +8,14 @@ os.chdir("D:\IBI1\IBI1_2020-21\Practical7")
 covid_data = pd.read_csv("full_data.csv")
 
 print(covid_data.iloc[0:11:2,0:5])
-i = 0
-while covid_data.loc[i,"location"] == "Afghanistan":
-    print(i,'   ',covid_data.loc[i,"total_cases"])
-    i += 1
-print("Mean:",np.mean(covid_data.iloc[:,2]))    
-print("Median:",np.median(covid_data.iloc[:,2]))
+t1 = []
+for i in range(covid_data.shape[0]):
+    if covid_data.loc[i,"location"] == "Afghanistan":
+        t1.append(True)
+    else:
+        t1.append(False)
+print("Mean:",np.mean(covid_data.iloc[t1,2]))    
+print("Median:",np.median(covid_data.iloc[t1,2]))
 
 plt.figure(figsize=(6,6), dpi=100)
 plt.figure(1)
@@ -33,11 +35,20 @@ plt.boxplot(
     notch = False
     )
 
-ax1 = plt.subplot(212)
-world_dates = covid_data.loc[:,"date"]
-world_new_cases = covid_data.loc[:,"new_cases"]
-plt.plot(world_dates, world_new_cases, 'b+')
+t2 = []
+for i in range(covid_data.shape[0]):
+    if covid_data.loc[i,"location"] == "World":
+        t2.append(True)
+    else:
+        t2.append(False)
 
+ax1 = plt.subplot(212)
+world_dates = covid_data.loc[t2,"date"]
+world_new_cases = covid_data.loc[t2,"new_cases"]
+world_new_deaths = covid_data.loc[t2,"new_deaths"]
+plt.plot(world_dates, world_new_deaths, 'b')
+plt.plot(world_dates, world_new_cases, 'r')
+plt.xticks(world_dates.iloc[0:len(world_dates):4],rotation=-90)
 plt.show()
 
 
