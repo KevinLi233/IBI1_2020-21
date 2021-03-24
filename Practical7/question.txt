@@ -1,6 +1,6 @@
 What proportion of cases have died in Germany? 
 What proportion of cases have died in the UK?
 
-from row 45 to row 60
+from row 56 to row 71
 proportion of cases have died in the UK: 0.06359243033286663
 proportion of cases have died in the Germany: 0.009416439196937638
