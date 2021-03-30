@@ -20,7 +20,7 @@ while True:
                 s = s + line1 
             f = '>>'+m[0]
             file2.write(f'{f:14}')
-            file2.write(str(int(len(s)/3)))
+            file2.write(str(int(len(s))))
             file2.write('\n')            
             file2.write(s)
             file2.write('\n')
