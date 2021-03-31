@@ -36,11 +36,13 @@ line = next(file1,'0')
 while True:
     if line.startswith('>>'):
         m = line
+
         line = next(file1,'0')
         s = line.replace('\n','')
         
-
-        file2.write(m)
+        f = m[0:14] + str(int(len(s)/3))
+        file2.write(f)
+        file2.write('\n')
         file2.write(encode(s))
         file2.write('\n')
             

@@ -24,10 +24,13 @@ while True:
             file2.write('\n')            
             file2.write(s)
             file2.write('\n')
-            
+        else:
+            line = next(file1,'0')  
+    else:
+        line = next(file1,'0')  
     if line == '0':
         break
-    line = next(file1,'0')
+    
 file1.close()
 file2.close()
 
