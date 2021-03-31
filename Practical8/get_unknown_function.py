@@ -9,7 +9,7 @@ line = next(file1,'0')
 while True:
     if line.startswith('>'):
         if re.search(r'unknown function',line):
-            m = re.findall(r'>(\S+)_',line)
+            m = re.findall('gene:(\S+)',line)
             s = ''
             
             while True:
