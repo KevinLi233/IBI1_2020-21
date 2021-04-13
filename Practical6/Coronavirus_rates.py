@@ -18,6 +18,7 @@ dic = dict(zip(country,cases))
 print(dicfre)
 # Generate a pie chart
 plt.pie(dic.values(),labels=dic.keys(),autopct='%1.1f%%',shadow=True,startangle=90)
+plt.title('Pie Chart about Frequency of Total Number of Cases for Five Countries')
 plt.axis('equal')
 plt.show()
 

@@ -1,0 +1,2 @@
+The guideline do not mention to change the content in index.md
+Git and github are very usefull for our programmed learning
