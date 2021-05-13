@@ -6,10 +6,9 @@ import matplotlib.pyplot as plt
 
 def findDNA(j,term):
     is_a=[]
-    flag=False
     is_a=term.getElementsByTagName('is_a')
     if is_a ==[]:
-        flag=False
+        return False
     else:
         for a in is_a:
             parentid=a.childNodes[0].data
@@ -19,10 +18,11 @@ def findDNA(j,term):
             defstr=fatherterm.getElementsByTagName('defstr')[0]
             d=defstr.childNodes[0].data
             if re.search(j,d):
-                flag=True
+                return True
             elif findDNA(j,fatherterm):
-                flag=True
-    return flag
+                return True
+            else:
+                return False
 os.chdir("D:\IBI1\IBI1_2020-21\Practical14")
 go_obo = open('go_obo.xml','r')
 DOMTree = xml.dom.minidom.parse('go_obo.xml')

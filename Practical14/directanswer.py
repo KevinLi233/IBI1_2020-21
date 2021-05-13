@@ -5,7 +5,7 @@ import os
 import matplotlib.pyplot as plt 
 
 labels = 'DNA-associated','RNA-associated','protein-associated','carbohydrate-associated'
-sizes = [7977,10373,31296,2558]
+sizes = [8651,11004,33459,4879]
 plt.pie(sizes, explode=None, labels=labels,
     colors=('b', 'g', 'r', 'c'),
     autopct='%1.2f%%', pctdistance=0.6, shadow=True,
