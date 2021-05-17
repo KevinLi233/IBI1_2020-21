@@ -14,7 +14,8 @@ def Grade_calculator(self):
     self.score = 0 + 0.4*self.code + 0.3 *(self.poster + self.final)
     print(self.name,': ',self.score)
 
-g = Grade('L',80,80,80,0)
+#example
+g = Grade('Leo',80,80,80,0)
 '''
 input student name and grades such as g = Grade('Tom',80,80,80,0)
 class difination is above
