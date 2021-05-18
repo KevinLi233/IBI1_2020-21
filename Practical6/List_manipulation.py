@@ -3,25 +3,11 @@ import numpy as np
 import matplotlib.pyplot as plt 
 
 # List initialization
-gene_len = []
-exon_cot = []
-aver = []
 # Input gene lengths
-# Input data as a string
-g = input("input gene lengths:")
-# split the string into a list
-g = list(g.split(','))
-# convert data types
-for i in range(len(g)):
-    gene_len.append(int(g[i]))
+gene_len = [9410,394141,4442,105338,19149,76779,126550,36296,842,15981]
 # Input exon counts
-# Input data as a string
-e = input("input exon counts:")
-# split the string into a list
-e = list(e.split(','))
-# convert data types
-for i in range(len(e)):
-    exon_cot.append(int(e[i]))
+exon_cot = [51,1142,42,216,25,650,32533,57,1,523]
+aver = []
 # get average exon length of each gene
 for i in range(len(gene_len)):
     aver.append(gene_len[i] / exon_cot[i])
@@ -41,4 +27,5 @@ plt.boxplot(
     showfliers = True,
     notch = False
     )
+plt.title("Boxplot of Average Exon Length")
 plt.show()

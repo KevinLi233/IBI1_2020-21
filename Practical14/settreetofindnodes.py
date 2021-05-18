@@ -71,7 +71,7 @@ class Graph:
 
     def __iter__(self):
         return iter(self.vertList.values())
-
+#build a tree 
 def plantTree(terms):
     tree = Graph()
     for term in terms:
@@ -80,7 +80,7 @@ def plantTree(terms):
         for fid in is_a:
             tree.addEdge(id,fid.childNodes[0].data)
     return tree
-
+#get all the sequence related term
 def getfather(terms, Specific_sequence):
     molecule_related = []
     for term in terms:
@@ -88,7 +88,7 @@ def getfather(terms, Specific_sequence):
         if Specific_sequence in defstr_text:
             molecule_related.append(term)
     return molecule_related
-
+#get all children for each sequence related term
 def getAllChildren(tree, vertices):
     allChildren = []
     for v in vertices:
@@ -97,7 +97,7 @@ def getAllChildren(tree, vertices):
             allChildren += children
             allChildren += getAllChildren(tree, children)
     return allChildren
-
+#count the number of childnodes
 def countchild(tree, Specific_sequence):
     count = 0
     fatherlist = getfather(terms, Specific_sequence)
@@ -120,7 +120,7 @@ print('the number of childNodes associated with RNA: ',RNAcount)
 print('the number of childNodes associated with protein: ',proteincount)
 #the number of childNodes associated with carbohydrate#
 print('the number of childNodes associated with carbohydrate: ',chcount)
-
+#Draw the pie chart
 labels = 'DNA-associated\n'+str(DNAcount),'RNA-associated\n'+str(RNAcount),'protein-associated\n'+str(proteincount),'carbohydrate-associated\n'+str(chcount)
 sizes = [DNAcount,RNAcount,proteincount,chcount]
 plt.pie(sizes, explode=None, labels=labels,

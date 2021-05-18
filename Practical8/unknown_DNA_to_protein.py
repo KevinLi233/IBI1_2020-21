@@ -2,7 +2,7 @@ import sys
 import os
 import re
 
-
+#translate function
 def encode(seq):
     ans = ''
     for i in range(0,len(seq),3):
@@ -10,6 +10,7 @@ def encode(seq):
     return ans
 
 os.chdir("D:\IBI1\IBI1_2020-21\Practical8")
+#Store the code in a dictionary
 code = {
     "TTT":'F',"TTC":'F',"TTA":'L',"TTG":'L',
     "TCT":'S',"TCC":'S',"TCA":'S',"TCG":'S',
@@ -28,10 +29,13 @@ code = {
     "GAT":'D',"GAC":'D',"GAA":'E',"GAG":'E',
     "GGT":'G',"GGC":'G',"GGA":'G',"GGG":'G',
 }
-name = input('Please input the filename: ')
+
+name = "peptide.unknown.fa"
+#input files and open output file
 file1 = open('unknown_function.fa','r')
 file2 = open(name,'w')
-
+#Iterate row one by one to get sequence and related sequence and lengths
+#get peptide sequence
 line = next(file1,'0')
 while True:
     if line.startswith('>>'):
@@ -41,6 +45,7 @@ while True:
         s = line.replace('\n','')
         
         f = m[0:14] + str(int(len(s)/3))
+        #Output each sequence and its associated length
         file2.write(f)
         file2.write('\n')
         file2.write(encode(s))
@@ -49,5 +54,6 @@ while True:
     if line == '0':
         break
     line = next(file1,'0')
+#close files
 file1.close()
 file2.close()

@@ -10,7 +10,8 @@ from xml.dom.minidom import parse
 import xml.dom.minidom
 import os
 import matplotlib.pyplot as plt 
-
+#recursion to determine if there is a sequence in all the parent node defstr
+#invoking itself with parent node
 def find(j,term):
     is_a = []
     flag = False
@@ -30,11 +31,13 @@ def find(j,term):
             elif find(j,fatherterm):
                 flag = True
     return flag
+#change working directory
 os.chdir("D:\IBI1\IBI1_2020-21\Practical14")
 go_obo = open('go_obo.xml','r')
 DOMTree = xml.dom.minidom.parse('go_obo.xml')
 collection = DOMTree.documentElement
-terms = collection.getElementsByTagName('term')                    
+terms = collection.getElementsByTagName('term')       
+#initialization             
 DNAcount = 0
 RNAcount = 0
 proteincount = 0
@@ -67,6 +70,7 @@ print('the number of childNodes associated with DNA: ',DNAcount)#8651
 print('the number of childNodes associated with RNA: ',RNAcount)#11004
 print('the number of childNodes associated with protein: ',proteincount)#33459
 print('the number of childNodes associated with carbohydrate: ',chcount)#4879
+#Draw the pie chart
 labels = 'DNA-associated\n'+str(DNAcount),'RNA-associated\n'+str(RNAcount),'protein-associated\n'+str(proteincount),'carbohydrate-associated\n'+str(chcount)
 sizes = [DNAcount,RNAcount,proteincount,chcount]
 plt.pie(sizes, explode=None, labels=labels,

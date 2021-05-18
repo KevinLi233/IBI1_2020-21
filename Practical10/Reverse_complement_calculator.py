@@ -4,6 +4,7 @@ def reverse(DNAs):
 	Returns a string
     '''
     seq = list(DNAs)
+    #Uniform case
     for i in range(len(seq)):
         if (seq[i]=='A')or(seq[i]=='a'):
             seq[i]='T'
@@ -18,6 +19,7 @@ def reverse(DNAs):
             seq[i]='A'
             continue
     s = ''
+    #get reverse complement
     for i in range(len(seq)-1,-1,-1):
         s = s + str(seq[i])
     print("Reverse complement:",s)

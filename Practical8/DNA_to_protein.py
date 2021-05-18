@@ -1,5 +1,6 @@
 seq = 'ATGCGACTACGATCGAGGGCC'
 ans = ''
+#Store the code in a dictionary
 code = {
     "TTT":'F',"TTC":'F',"TTA":'L',"TTG":'L',
     "TCT":'S',"TCC":'S',"TCA":'S',"TCG":'S',
@@ -18,6 +19,7 @@ code = {
     "GAT":'D',"GAC":'D',"GAA":'E',"GAG":'E',
     "GGT":'G',"GGC":'G',"GGA":'G',"GGG":'G',
 }
+#get the amino acid sequence
 for i in range(0,len(seq),3):
     ans = ans + code[seq[i:i+3]]
 print(ans)

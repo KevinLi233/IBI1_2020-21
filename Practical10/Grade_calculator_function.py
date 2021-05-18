@@ -1,3 +1,4 @@
+#class defination
 class Grade(object):
     def __init__(self, name, code, poster, final, score):
         self.name = name
@@ -5,7 +6,7 @@ class Grade(object):
         self.poster = poster
         self.final = final
         self.score = score
-
+#calculate the grade
 def Grade_calculator(self):
     '''
     Input: a grade class
@@ -18,7 +19,7 @@ def Grade_calculator(self):
 g = Grade('Leo',80,80,80,0)
 '''
 input student name and grades such as g = Grade('Tom',80,80,80,0)
-class difination is above
+class defination is above
 '''
 Grade_calculator(g)
 
